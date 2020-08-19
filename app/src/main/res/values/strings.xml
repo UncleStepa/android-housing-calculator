@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Housing-calculator</string>
+    <string name="neoTittle">Neo ЖКХ</string>
+    <string name="save">Передача показаний</string>
+    <string name="history">История показаний</string>
+    <string name="guide">Справочник</string>
+    <string name="edit_date">date</string>
+    <string name="saveTestimony">Передача показаний</string>
+    <string name="currentDate">Текущая дата в формате mm-yyyy*</string>
+    <string name="coldWater">Показание счётчика холодной воды*</string>
+    <string name="hotWater">Показание счётчика горячей воды*</string>
+    <string name="gas">Показание газового счётчика</string>
+    <string name="electricity">Показание электрического счётчика*</string>
+    <string name="mandatory">* - поле обязательно для заполнения</string>
+    <string name="sentTestimony">Отправить показания</string>
+    <string name="result">Result</string>
+
+</resources>

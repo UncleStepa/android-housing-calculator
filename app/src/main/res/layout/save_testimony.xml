@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tx_currentTestimony"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/saveTestimony" />
+
+    <EditText
+        android:id="@+id/et_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/currentDate"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textSize="25sp"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/et_coldWater"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/coldWater"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/et_hotWater"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hotWater"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/et_gas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/gas"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/et_electricity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/electricity"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/tx_textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mandatory" />
+
+    <Button
+        android:id="@+id/b_sentTestimony"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sentTestimony" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/result"/>
+
+
+</LinearLayout>
