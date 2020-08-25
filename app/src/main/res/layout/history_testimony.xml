@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/calk"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et_dateHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/currentDate"
+        android:inputType="text"
+        android:padding="15dp"
+        android:textColorHint="#000000"
+        android:textSize="21sp"
+        tools:ignore="TextFields" />
+
+    <Button
+        android:id="@+id/b_getHistoryTestimony"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/getHistoryTestimony" />
+
+    <Button
+        android:id="@+id/b_back_tomain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="backMain"
+        android:text="@string/returnMainActivity" />
+</LinearLayout>

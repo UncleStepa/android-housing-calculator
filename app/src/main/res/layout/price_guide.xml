@@ -8,70 +8,52 @@
     android:background="@drawable/calk">
 
     <EditText
-        android:id="@+id/et_date"
+        android:id="@+id/et_coldPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/currentDate"
-        android:inputType="text"
-        android:padding="15dp"
-        android:textSize="21sp"
-        android:textColorHint="#000000"
-        tools:ignore="TextFields" />
-
-    <EditText
-        android:id="@+id/et_coldWater"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/coldWater"
+        android:hint="@string/coldPrice"
         android:inputType="numberDecimal"
-        android:padding="15dp"
+        android:padding="10dp"
         android:textSize="21sp"
         android:textColorHint="#000000"/>
 
     <EditText
-        android:id="@+id/et_hotWater"
+        android:id="@+id/et_hotPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hotWater"
+        android:hint="@string/hotPrice"
         android:inputType="numberDecimal"
-        android:padding="15dp"
+        android:padding="10dp"
+        android:textSize="21sp"
+        android:textColorHint="#000000"/>
+
+
+    <EditText
+        android:id="@+id/et_gasPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/gasPrice"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
         android:textSize="21sp"
         android:textColorHint="#000000"/>
 
     <EditText
-        android:id="@+id/et_gas"
+        android:id="@+id/et_electricityPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/gas"
+        android:hint="@string/electricityPrice"
         android:inputType="numberDecimal"
-        android:padding="15dp"
+        android:padding="10dp"
         android:textSize="21sp"
         android:textColorHint="#000000"/>
 
-    <EditText
-        android:id="@+id/et_electricity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/electricity"
-        android:inputType="numberDecimal"
-        android:padding="15dp"
-        android:textSize="21sp"
-        android:textColorHint="#000000"/>
-
-    <TextView
-        android:id="@+id/tx_textView7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/mandatory"
-        android:padding="15dp"
-        android:textSize="18sp"
-        android:textColor="#000000"/>
 
     <Button
-        android:id="@+id/b_sentTestimony"
+        android:id="@+id/b_updatePriceGuide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sentTestimony" />
+        android:text="@string/updatePriceGuide" />
 
     <Button
         android:id="@+id/b_back_tomain"

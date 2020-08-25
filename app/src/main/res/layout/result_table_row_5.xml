@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<TableRow android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:id="@+id/gas"
+            android:layout_width="match_parent"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:background="#708090"
+            android:text="Газ" />
+
+        <TextView
+            android:id="@+id/consumedGas"
+            android:layout_width="match_parent"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:background="#708090"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/costGas"
+            android:layout_width="match_parent"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:background="#708090"
+            android:text="" />
+    </TableRow>
+

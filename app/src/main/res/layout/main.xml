@@ -3,13 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/neoTittle" />
+    android:orientation="vertical"
+    android:background="@drawable/calk">
 
     <Button
         android:id="@+id/save"
@@ -18,17 +13,18 @@
         android:text="@string/save"
         android:onClick="saveTestimony"/>
 
-
     <Button
         android:id="@+id/history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/history" />
+        android:text="@string/history"
+        android:onClick="getOldTestimony"/>
 
     <Button
         android:id="@+id/guide"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/guide" />
+        android:text="@string/guide"
+        android:onClick="changePrice"/>
 
 </LinearLayout>

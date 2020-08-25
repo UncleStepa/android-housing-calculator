@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Housing-calculator</string>
+    <string name="app_name">Калькулятор ЖКХ</string>
     <string name="neoTittle">Neo ЖКХ</string>
     <string name="save">Передача показаний</string>
     <string name="history">История показаний</string>
@@ -14,5 +14,17 @@
     <string name="mandatory">* - поле обязательно для заполнения</string>
     <string name="sentTestimony">Отправить показания</string>
     <string name="result">Result</string>
+    <string name="billingPeriod">Расчётный период</string>
+    <string name="coldPrice">Цена за куб холодной воды</string>
+    <string name="hotPrice">Цена за куб горячей воды</string>
+    <string name="gasPrice">Цена за куб газа</string>
+    <string name="electricityPrice">Цена за кВт*ч электричества</string>
+    <string name="labelPriceGuide">Справочник стоимости услуг</string>
+    <string name="updatePriceGuide">Обновить справочник</string>
+    <string name="returnMainActivity">Вернуться на главный экран</string>
+    <string name="resultTable">Результаты расчета показаний</string>
+    <string name="str_priceGuide">Справочник стоимости услуг</string>
+    <string name="getHistoryTestimony">Получить</string>
+    <string name="historyTestimony">История показаний</string>
 
 </resources>
