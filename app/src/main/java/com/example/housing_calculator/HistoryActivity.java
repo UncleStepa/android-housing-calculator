@@ -11,6 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.housing_calculator.model.responses.ResponseSaveTestimony;
 import com.example.housing_calculator.utils.Server;
 import com.example.housing_calculator.utils.ServerHistory;
+import com.example.housing_calculator.utils.dialogpages.DialogBdError;
+import com.example.housing_calculator.utils.dialogpages.DialogDateNotFaund;
+import com.example.housing_calculator.utils.dialogpages.DialogEmptyFields;
+import com.example.housing_calculator.utils.dialogpages.DialogFirstTestimonySave;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,6 +48,9 @@ public class HistoryActivity  extends AppCompatActivity {
                         .build();
 
                 ServerHistory service = retrofit.create(ServerHistory.class);
+                if (editDate.getText().toString().equals("")) {
+                    showDialogEmpty(view);
+                }
                 Call<ResponseSaveTestimony> call = service.getHistoryTestimony(editDate.getText().toString());
                 call.enqueue(new Callback<ResponseSaveTestimony>() {
                     @Override
@@ -51,19 +58,37 @@ public class HistoryActivity  extends AppCompatActivity {
 
                         if (response.isSuccessful()) {
                             responseSaveTestimony = response.body();
-                            generateHistoryTable(view);
 
-                        } else {
-
-                            switch (response.code()) {
-                                case 404:
-                                    System.out.println(404);
+                            switch (responseSaveTestimony.getFaultcode().getResultCode()) {
+                                case "ERR-002":
+                                    showDialogThree(view);
                                     break;
-                                case 500:
-                                    System.out.println(500);
+                                case "ERR-004":
+                                    showDialog(view);
+                                    break;
+                                case "ERR-000":
+                                    showDialogTwo(view);
+                                    break;
+                                case "0":
+                                    generateHistoryTable(view);
                                     break;
                             }
+
                         }
+                    }
+                    public void showDialog(View v) {
+                        DialogDateNotFaund dialog = new DialogDateNotFaund();
+                        dialog.show(getSupportFragmentManager(), "custom");
+                    }
+
+                    public void showDialogTwo(View v) {
+                        DialogFirstTestimonySave dialog = new DialogFirstTestimonySave();
+                        dialog.show(getSupportFragmentManager(), "custom");
+                    }
+
+                    public void showDialogThree(View v) {
+                        DialogBdError dialog = new DialogBdError();
+                        dialog.show(getSupportFragmentManager(), "custom");
                     }
 
                     public void generateHistoryTable(View view) {
@@ -96,5 +121,9 @@ public class HistoryActivity  extends AppCompatActivity {
     public void backMain(View view) {
         Intent intent = new Intent(HistoryActivity.this, MainActivity.class);
         startActivity(intent);
+    }
+    public void showDialogEmpty(View v) {
+        DialogEmptyFields dialog = new DialogEmptyFields();
+        dialog.show(getSupportFragmentManager(), "custom");
     }
 }

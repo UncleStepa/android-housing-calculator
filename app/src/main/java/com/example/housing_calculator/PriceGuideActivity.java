@@ -10,8 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.housing_calculator.model.requests.Price;
 import com.example.housing_calculator.model.requests.PriceChange;
 import com.example.housing_calculator.model.responses.ResponsePriceChange;
-import com.example.housing_calculator.utils.CustomDialogFragment;
+import com.example.housing_calculator.utils.dialogpages.CustomDialogFragmentChangePrice;
 import com.example.housing_calculator.utils.ServerPriceChange;
+import com.example.housing_calculator.utils.dialogpages.DialogEmptyFields;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,7 +33,7 @@ public class PriceGuideActivity extends AppCompatActivity {
     private String hotString;
     private String gasString;
     private String elecString;
-//    private static ResponsePriceChange responsePriceChange = new ResponsePriceChange();
+
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -53,16 +54,21 @@ public class PriceGuideActivity extends AppCompatActivity {
                 hotString = editPriceHot.getText().toString();
                 gasString = editPriceGas.getText().toString();
                 elecString = editPriceElec.getText().toString();
-                price.setPriceColdWater(Integer.parseInt(coldString));
-                price.setPriceHotWater(Integer.parseInt(hotString));
 
+                if (coldString.equals("") || hotString.equals("") || elecString.equals("")) {
+                    showDialogEmpty(view);
+                }
+                else {
+                    price.setPriceColdWater(Integer.parseInt(coldString));
+                    price.setPriceHotWater(Integer.parseInt(hotString));
+                    price.setPriceElectricity(Integer.parseInt(elecString));
+                    priceChange.setPrice(price);
+                }
                 if (gasString.equals("")) {
                     price.setPriceGas(0);
                 } else {
                     price.setPriceGas(Integer.parseInt(gasString));
                 }
-                price.setPriceElectricity(Integer.parseInt(elecString));
-                priceChange.setPrice(price);
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl("http://10.0.2.2:8080/services/testimony/")
                         .addConverterFactory(GsonConverterFactory.create())
@@ -91,7 +97,7 @@ public class PriceGuideActivity extends AppCompatActivity {
                     }
 
                     public void showDialog(View v) {
-                        CustomDialogFragment dialog = new CustomDialogFragment();
+                        CustomDialogFragmentChangePrice dialog = new CustomDialogFragmentChangePrice();
                         dialog.show(getSupportFragmentManager(), "custom");
                     }
 
@@ -112,4 +118,8 @@ public class PriceGuideActivity extends AppCompatActivity {
         Intent intent = new Intent(PriceGuideActivity.this, MainActivity.class);
         startActivity(intent);
     }
+        public void showDialogEmpty(View v) {
+            DialogEmptyFields dialog = new DialogEmptyFields();
+            dialog.show(getSupportFragmentManager(), "custom");
+        }
 }

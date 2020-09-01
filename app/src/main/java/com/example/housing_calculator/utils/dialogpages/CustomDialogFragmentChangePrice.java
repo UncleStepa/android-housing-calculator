@@ -1,4 +1,4 @@
-package com.example.housing_calculator.utils;
+package com.example.housing_calculator.utils.dialogpages;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
-public class CustomDialogFragment extends DialogFragment {
+public class CustomDialogFragmentChangePrice extends DialogFragment {
 
     @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
